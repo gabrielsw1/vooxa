@@ -25,33 +25,19 @@ export default defineConfig((/* ctx */) => {
         browser: ['es2022', 'firefox115', 'chrome115', 'safari14'],
         node: 'node20',
       },
-
       vueRouterMode: 'history',
       publicPath: '/',
       minify: true,
-      polyfillModulePreload: true,
-
-      vitePlugins: [
-        [
-          'vite-plugin-checker',
-          {
-            eslint: {
-              lintCommand: 'eslint -c ./eslint.config.js "./src*/**/*.{js,mjs,cjs,vue}"',
-              useFlatConfig: true,
-            },
-          },
-          { server: false },
-        ],
-      ],
+      vitePlugins: [],
       extendViteConf(viteConf) {
         viteConf.build = {
           ...viteConf.build,
           rollupOptions: {
             output: {
               format: 'es',
-              entryFileNames: '[name].[hash].js',
-              chunkFileNames: '[name].[hash].js',
-              assetFileNames: '[name].[hash].[ext]',
+              entryFileNames: '[name].js',
+              chunkFileNames: '[name].js',
+              assetFileNames: '[name].[ext]',
             },
           },
         }
