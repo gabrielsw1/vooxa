@@ -15,7 +15,7 @@
       "headers": [
         {
           "key": "Content-Type",
-          "value": "application/javascript"
+          "value": "application/javascript+module"
         }
       ]
     },
@@ -24,7 +24,7 @@
       "headers": [
         {
           "key": "Content-Type",
-          "value": "application/javascript"
+          "value": "application/javascript+module"
         }
       ]
     },
@@ -46,16 +46,16 @@
     {
       "src": "/assets/(.*)",
       "headers": {
-        "Content-Type": "application/javascript"
+        "Content-Type": "application/javascript+module"
       },
       "dest": "/assets/$1"
     },
     {
       "src": "/(.*\\.js)",
       "headers": {
-        "Content-Type": "application/javascript"
+        "Content-Type": "application/javascript+module"
       },
       "dest": "/$1"
     }
   ]
-} 
+}
