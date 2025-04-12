@@ -12,7 +12,17 @@
   "routes": [
     {
       "src": "/(.*)",
+      "headers": {
+        "Content-Type": "text/javascript"
+      },
       "dest": "/index.html"
+    },
+    {
+      "src": "/assets/(.*)",
+      "headers": {
+        "Content-Type": "text/javascript"
+      },
+      "dest": "/assets/$1"
     }
   ]
 } 
