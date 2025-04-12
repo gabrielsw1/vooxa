@@ -1,36 +1,26 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist/spa",
-        "buildCommand": "npm run vercel-build"
-      }
-    }
-  ],
   "headers": [
     {
-      "source": "/(.*)\\.js",
+      "source": "/(.*)\\.js$",
       "headers": [
         {
           "key": "Content-Type",
-          "value": "application/javascript+module"
+          "value": "application/javascript"
         }
       ]
     },
     {
-      "source": "/(.*)\\.mjs",
+      "source": "/(.*)\\.mjs$",
       "headers": [
         {
           "key": "Content-Type",
-          "value": "application/javascript+module"
+          "value": "application/javascript"
         }
       ]
     },
     {
-      "source": "/(.*)\\.css",
+      "source": "/(.*)\\.css$",
       "headers": [
         {
           "key": "Content-Type",
